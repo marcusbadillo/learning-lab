@@ -1,0 +1,21 @@
+{
+  "What is Artificial Intelligence (AI)?": "Refers to computers simulating human intelligence processes like learning, reasoning, self-correction, and creativity. The endeavor to equip machines with human-like information processing and decision-making capabilities.",
+  "What does 'bellicose' mean?": "Demonstrating aggression and willingness to fight",
+  "What is Generative AI?": "A type of AI that can create new content such as images, text, or audio by learning patterns from existing data.",
+  "What is Amazon Bedrock?": "A fully managed service that makes foundation models from AI companies available via an API without managing infrastructure.",
+  "What is a foundation model (FM)?": "A large AI model trained on broad data that can be adapted to many different tasks.",
+  "Who or what is ELIZA?": "A computer program created in the 1960s, was one of the first programs designed to have a conversation with people.",
+  "What is Human Intelligence (HI)?": " The innate ability of humans to process information and make decisions based on it.",
+  "What is Machine Learning (ML)?": " A subset of AI, it involves training computers to learn from data and improve over time.",
+  "What are Data Points?": "Individual pieces of information processed for decision-making.",
+  "What is Certainty?": "The level of confidence in making a decision based on processed information.",
+  "What us 'Data' in the context of AI development?": "The myriad forms of digital information like images, text, pixels, and numbers that fuel the learning process.",
+  "What is ML Algorithm Code?": "The rulebook guiding the processing of data.",
+  "What is a Machine Learning Model?": "Often dubbed as the system's 'brain', it harnesses algorithms to process data, paving the path for predictions or decisions.",
+  "What is training?": "The saga of nurturing the model by processing data through the ML algorithm code.",
+  "What is Testing Models?": "The act of gauging the model's mettle using new data, post-training.",
+  "What is the Iteration in AI development?": "The cycle of tweaking algorithms and data, coupled with re-training, aiming to uplift model performance.",
+  "What is Supervised learning?": "Like learning with a Teacher, You provide the model with data and the correct answers (labels) for each data point, much like showing a picture of a cat and telling the model it's a cat. You should use this, If you have labeled data and you want the model to learn the right answer from this data. EX, Classifying images, speech recognition, self-driving car tasks like identifying pedestrians",
+  "What is Unsupervised Learning?": "A type of Model training that explores a lot of data on its own to find patterns and structures. Use this when you have unlabeled data and you want the model to find patterns or structures in the data. Ex, Generating new songs, writing code, handling unlabeled data.",
+  "What is Reinforcement Learning?": "A type of model training by interacting with an environment, receiving rewards for right actions and penalties for wrong ones. Use this when you want your model to learn from its interactions and feedback, without needing labeled data.Ex, Video games, robotics, real-time decision-making in self-driving cars."
+}

@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+*.egg-info/
+
+# VS Code and IDE settings
+.vscode/
+.idea/
+
+# Environment files
+.env
+.venv/
+venv/
+
+# macOS specific
+.DS_Store
+
+# Test and coverage results
+*.log
+*.coverage
+htmlcov/
+
+# OS-generated files
+Thumbs.db
+ehthumbs.db

@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: terminal_quiz
+Version: 0.1.0
+Summary: A simple terminal-based quiz engine.
+Author: Marcus Badillo
+Dynamic: author
+Dynamic: summary

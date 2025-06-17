@@ -1,0 +1,2 @@
+-e ./terminal-quiz
+jupyterlab==4.4.3
