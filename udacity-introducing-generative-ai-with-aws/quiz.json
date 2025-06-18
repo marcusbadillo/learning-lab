@@ -17,5 +17,13 @@
   "What is the Iteration in AI development?": "The cycle of tweaking algorithms and data, coupled with re-training, aiming to uplift model performance.",
   "What is Supervised learning?": "Like learning with a Teacher, You provide the model with data and the correct answers (labels) for each data point, much like showing a picture of a cat and telling the model it's a cat. You should use this, If you have labeled data and you want the model to learn the right answer from this data. EX, Classifying images, speech recognition, self-driving car tasks like identifying pedestrians",
   "What is Unsupervised Learning?": "A type of Model training that explores a lot of data on its own to find patterns and structures. Use this when you have unlabeled data and you want the model to find patterns or structures in the data. Ex, Generating new songs, writing code, handling unlabeled data.",
-  "What is Reinforcement Learning?": "A type of model training by interacting with an environment, receiving rewards for right actions and penalties for wrong ones. Use this when you want your model to learn from its interactions and feedback, without needing labeled data.Ex, Video games, robotics, real-time decision-making in self-driving cars."
+  "What is Reinforcement Learning?": "A type of model training by interacting with an environment, receiving rewards for right actions and penalties for wrong ones. Use this when you want your model to learn from its interactions and feedback, without needing labeled data.Ex, Video games, robotics, real-time decision-making in self-driving cars.",
+  "What are Decision Trees? (Machine Learning)": "Flowchart-like structures aiding in decision-making based on data features.",
+  "What are Regression Algorithms? (Machine Learning)": "Useful for predicting numerical values by modeling relationships between variables.",
+  "What are Clustering Algorithms? (Machine Learning)": "Techniques that group data into clusters based on similarity, aiding in data segmentation and categorization.",
+  "Artificial Neural Networks (Deep Learning)": "Inspired by the human brain, these networks excel in processing huge amounts of data and learning patterns from it.",
+  "Convolutional Neural Networks - CNNs (Deep Learning)": "Specialized for vision tasks, preserving spatial context of images.",
+  "Recurrent Neural Networks - RNNs (Deep Learning)": "Efficient for sequential data, aiding in tasks like predictive text.",
+  "Generative Models (Advanced Deep Learning)": "Aim to generate new data samples similar to input data, useful in creating new content.",
+  "Transformer Architecture (Advanced Deep Learning)": "Consisting of encoders and decoders, crucial in language translation and code generation tasks."
 }
