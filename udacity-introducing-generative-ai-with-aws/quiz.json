@@ -25,5 +25,11 @@
   "Convolutional Neural Networks - CNNs (Deep Learning)": "Specialized for vision tasks, preserving spatial context of images.",
   "Recurrent Neural Networks - RNNs (Deep Learning)": "Efficient for sequential data, aiding in tasks like predictive text.",
   "Generative Models (Advanced Deep Learning)": "Aim to generate new data samples similar to input data, useful in creating new content.",
-  "Transformer Architecture (Advanced Deep Learning)": "Consisting of encoders and decoders, crucial in language translation and code generation tasks."
+  "Transformer Architecture (Advanced Deep Learning)": "Consisting of encoders and decoders, crucial in language translation and code generation tasks.",
+  "What is the Training Process for Neural Networks?": "Involves feeding data through the network, adjusting weights based on errors, and iterating to improve accuracy. Unlike decision trees, neural networks are not easily visualizable in terms of their decision-making process because they are considered 'black box' models. You can plot the training and validation loss and accuracy over epochs to understand how the model is learning.",
+  "What is the ReLU activation function?": "A non-linear function that helps neural networks learn complex patterns by introducing non-linearity, allowing the model to learn more complex relationships in the data.",
+  "Waht is the Sigmoid activation function": "used in the output layer to produce a probability score between 0 and 1, suitable for binary classification tasks.",
+  "What is an epoch?": "one complete pass through the entire training dataset during the training of a machine learning model. It is a single iteration where the model learns from all the training data once.",
+  "What is an epic?": "a large, significant project or task that is part of a larger development process, often used in agile methodologies to describe a substantial feature or goal that can be broken down into smaller tasks or user stories.",
+  "What are Decision Boundary (neural networks)": "a boundary in the feature space that separates the data points into different classes based on the predictions made by the model"
 }
