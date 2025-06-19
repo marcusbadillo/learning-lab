@@ -9,7 +9,7 @@ This notebook builds a basic rule-based chatbot that helps customers get answers
 1. Open `customer_support_chatbot.ipynb` in JupyterLab.
 2. Run it
 
-## Libs talked about or user in course
+## Libs / Tools learned about in course
 
 [Aws Rekognition](https://aws.amazon.com/rekognition/) An AWS service that uses deep learning to analyze images and videos for tasks such as facial analysis and object identification, it requires no ML expertise from the user.
 
@@ -24,3 +24,5 @@ This notebook builds a basic rule-based chatbot that helps customers get answers
 [matplotlib](https://matplotlib.org/stable/api/index.html)
 
 [Pytorch](https://docs.pytorch.org/tutorials/beginner/introyt/introyt_index.html)
+
+[Sage Maker](https://aws.amazon.com/sagemaker/) Center for data, analytics and AI development.
