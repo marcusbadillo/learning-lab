@@ -1,10 +1,17 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="terminal_quiz",
+    name="terminal-quiz",
     version="0.1.0",
-    packages=find_packages(),
     description="A simple terminal-based quiz engine.",
     author="Marcus Badillo",
-    install_requires=[],
+    license="MIT",
+    url="https://example.com",
+    packages=find_packages(),
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    python_requires=">=3.7",
 )
