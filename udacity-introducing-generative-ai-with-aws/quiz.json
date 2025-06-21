@@ -31,5 +31,10 @@
   "Waht is the Sigmoid activation function": "used in the output layer to produce a probability score between 0 and 1, suitable for binary classification tasks.",
   "What is an epoch?": "one complete pass through the entire training dataset during the training of a machine learning model. It is a single iteration where the model learns from all the training data once.",
   "What is an epic?": "a large, significant project or task that is part of a larger development process, often used in agile methodologies to describe a substantial feature or goal that can be broken down into smaller tasks or user stories.",
-  "What are Decision Boundary (neural networks)": "a boundary in the feature space that separates the data points into different classes based on the predictions made by the model"
+  "What are Decision Boundary (neural networks)": "a boundary in the feature space that separates the data points into different classes based on the predictions made by the model",
+  "What is Binary Classification?": "A type of classification task where the model predicts one of two possible classes or outcomes, such as spam vs. not spam in email filtering.",
+  "What is Multiclass classification?": "this is a type of classification task where the model predicts one of three or more possible classes or outcomes, such as classifying images into categories like cats, dogs, and birds. (predict values from a limited, predefined set of permissbable)",
+  "What us a 'Reature' in machine learning?": "Is an individual measurable property or characteristic used by the model to make predictions. Features are the input variables that the model uses to learn patterns and make decisions. (determines accuracy of model predictions)",
+  "What is a 'Weight' in machine learning?": "A parameter within the model that determines the importance of a feature in making predictions. These are adjusted during the training process to minimize the error in the model's predictions. (contextual wiegh, higher weight means more importance)",
+  "What is Overfitting?": "A scenario where a model learns the training data too well, capturing noise and outliers, leading to poor generalization on new data. It occurs when the model is too complex relative to the amount of training data available. (eval stage doesnt perform well)"
 }

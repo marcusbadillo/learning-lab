@@ -26,3 +26,11 @@ This notebook builds a basic rule-based chatbot that helps customers get answers
 [Pytorch](https://docs.pytorch.org/tutorials/beginner/introyt/introyt_index.html)
 
 [Sage Maker](https://aws.amazon.com/sagemaker/) Center for data, analytics and AI development.
+
+[pandas](https://pypi.org/project/pandas/)
+
+[seaborn](https://seaborn.pydata.org/)
+
+[numpy](https://pypi.org/project/numpy/)
+
+[scikit-learn](https://scikit-learn.org/stable/)
