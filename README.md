@@ -6,9 +6,9 @@ Living archive of my ongoing learning and technical growth. Each directory repre
   - [Introducing Generative AI with AWS](#introducing-generative-ai-with-aws)
     - [Topics Covered](#topics-covered)
     - [What I learned](#what-i-learned)
-  - [🧠 Terminal Quiz](#-terminal-quiz)
     - [Python Environment Setup](#python-environment-setup)
   - [Jupyter Notebooks](#jupyter-notebooks)
+  - [🧠 Terminal Quiz](#-terminal-quiz)
 
 ## Introducing Generative AI with AWS
 
@@ -36,10 +36,6 @@ Provide perspective on the ethical, societal, and economic implications of gener
 
 [View Project](./udacity-introducing-generative-ai-with-aws/)
 
-## 🧠 Terminal Quiz
-
-Each module in the Learning Lab includes a simple terminal-based quiz powered by a shared core quiz engine.
-
 ### Python Environment Setup
 
 - Python version: 3.11.8
@@ -55,8 +51,15 @@ pip install -r requirements.txt
 
 ## Jupyter Notebooks
 
-1. After environment setup, start Jupyter Lab:
-
 ```bash
 jupyter lab
+```
+
+## 🧠 Terminal Quiz
+
+Each module in the Learning Lab includes a simple terminal-based quiz powered by a shared core quiz engine.
+
+```bash
+# Ex. python terminal-quiz/terminal_quiz/engine.py [./**/**/quiz.json]
+python terminal-quiz/terminal_quiz/engine.py ./udacity-introducing-generative-ai-with-aws/quiz.json
 ```

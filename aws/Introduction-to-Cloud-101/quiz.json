@@ -1,4 +1,5 @@
 {
+  "__title__": "AWS Introduciton to Cloud 101",
   "What is cloud computing?": "is the delivery of computing services like servers, storage, databases, networking, software, and analytics over the internet ('the cloud') to offer faster innovation and flexible resources.",
   "What are the three main cloud service models?": "Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS).",
   "What is the difference between public, private, and hybrid cloud?": "Public cloud is available to anyone over the internet, private cloud is used exclusively by one organization, and hybrid cloud combines both, allowing data and applications to move between them.",

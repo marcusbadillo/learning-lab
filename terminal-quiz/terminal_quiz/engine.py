@@ -1,13 +1,19 @@
 import json
 import random
+import sys
 from pathlib import Path
 
 
-def run_quiz(json_path: str):
+def run_quiz() -> None:
+    if len(sys.argv) != 2:
+        print("\n❗ Usage: python run.py path/to/quiz.json\n")
+        return sys.exit(1)
+
+    json_path = sys.argv[1]
     quiz_file = Path(json_path)
     if not quiz_file.exists():
         print(f"❌ Error: {json_path} not found.")
-        return
+        return sys.exit(1)
 
     with open(quiz_file, "r", encoding="utf-8") as f:
         quiz = json.load(f)
@@ -16,6 +22,10 @@ def run_quiz(json_path: str):
     words = [k for k in quiz.keys() if k != "__title__"]
     score = 0
     questions = len(words)
+
+    if questions < 1:
+        print("⚠️ Not enough questions in this quiz.")
+        return sys.exit(1)
 
     print(title)
 
@@ -40,3 +50,7 @@ def run_quiz(json_path: str):
             print(f"⚠️ Invalid input. The correct answer was: {correct_def}\n")
 
     print(f"🏋️ Quiz complete! You scored {score} out of {questions}.\n")
+
+
+if __name__ == "__main__":
+    run_quiz()
