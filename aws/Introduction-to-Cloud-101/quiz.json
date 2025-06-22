@@ -28,5 +28,6 @@
   "What is Amazon Route 53?": "This scalable DNS service manages domain name resolution, routing internet traffic based on health checks and routing policies.",
   "What is Amazon Elastic Beanstalk?": "This platform automates deployment and scaling for web apps by handling infrastructure tasks like provisioning and load balancing.",
   "What is Amazon CloudFormation?": "This infrastructure automation tool uses templates to define, provision, and manage AWS resources in a repeatable way.",
-  "What is Amazon EKS?": "This service provides a secure and managed environment for running Kubernetes clusters without maintaining the control plane."
+  "What is Amazon EKS?": "This service provides a secure and managed environment for running Kubernetes clusters without maintaining the control plane.",
+  "What is a subsnet?": "a range of IP addresses in your VPC that allows you to segment your network for better organization and security. Subnets can be public (accessible from the internet) or private (not directly accessible from the internet)."
 }
