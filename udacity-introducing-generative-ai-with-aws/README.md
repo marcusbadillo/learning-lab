@@ -40,3 +40,9 @@ Create and customize AI apps with powerful capabilities
 
 [boto3](https://aws.amazon.com/sdk-for-python/)
 Develop and deploy applications with Boto3. The AWS SDK for Python makes it easy to call AWS services using idiomatic Python APIs.
+
+[Amazon Q Developer](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html)
+
+[TensorBoard](https://www.tensorflow.org/tensorboard)
+
+[Transformers](https://huggingface.co/docs/transformers/en/installation)
