@@ -1,4 +1,4 @@
-# Introduction to CLoud 101
+# Introduction to Cloud 101
 
 1. Define cloud computing and describe its benefits
 2. Compare and contrast cloud computing service and deployment models
