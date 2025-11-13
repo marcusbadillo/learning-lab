@@ -86,3 +86,71 @@
 | AWS PrivateLink      | Keeps AI systems off the public internet for enhanced security.               |
 | AWS Key Management Service (KMS) | Encrypts data handled by AI systems to protect sensitive information. |
 | AWS Identity and Access Management (IAM) | Implements role-based access control to manage permissions for AI models. |
+
+## AWS CLI setup for lab access
+
+configure a profile (helpful to give a profile name)
+
+```bash
+aws configure --profile udacity-aws-lab-1
+```
+
+generate and apply access token
+
+```bash
+aws configure set aws_session_token "***" --profile udacity-aws-lab-1
+```
+
+command above will generate this
+
+```bash
+cat ~/.aws/credentials
+```
+
+add env vars to shell
+
+```bash
+export AWS_CONFIG_FILE=~/.aws/config
+export AWS_SHARED_CREDENTIALS_FILE=~/.aws/credentials
+```
+
+check the profile is assigned
+
+```bash
+aws iam list-users --profile udacity-aws-lab-1
+```
+
+change region by profile
+
+```bash
+aws configure set region us-east-1 --profile udacity-aws-lab-1 
+```
+
+list users
+
+```bash
+aws iam list-users --profile udacity-aws-lab-1
+```
+
+preview config
+
+```bash
+aws configure list --profile udacity-aws-lab-1
+```
+
+test profile
+
+```bash
+AWS_PROFILE=udacity-aws-lab-1 aws sts get-caller-identity
+AWS_PROFILE=udacity-aws-lab-1 aws bedrock list-foundation-models --region us-east-1
+
+```
+
+## Command Differences
+
+aws bedrock vs. aws bedrock-runtime:
+
+```bash
+aws bedrock # Modify service configurations and enable new models/features.
+aws bedrock-runtime # Invoke models directly and interact with them.
+```
