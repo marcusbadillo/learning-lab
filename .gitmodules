@@ -1,0 +1,3 @@
+[submodule "udacity/future-aws-ai-engineer/cd13926-Building-Apps-Amazon-Bedrock-exercises"]
+	path = udacity/future-aws-ai-engineer/cd13926-Building-Apps-Amazon-Bedrock-exercises
+	url = git@github.com:udacity/cd13926-Building-Apps-Amazon-Bedrock-exercises.git
