@@ -1,3 +1,13 @@
 {
-  "__title__": "Udacity Future AWS AI Engineer"
+  "__title__": "Udacity Future AWS AI Engineer",
+  "What are Embeddings?, in your own words": "Numerical representations of text that capture semantic meaning, allowing for easier comparison and analysis. Similar words are closer together (e.g., lawyer and attorney)",
+  "What are Embeddings?": "are dense vector representations of words, sentences, or documents in a high-dimensional space. They capture semantic meaning, allowing machines to understand and process text more effectively. In this space, similar concepts are closer together, enabling various NLP tasks like similarity search, clustering, and information retrieval.",
+  "What are Numerical representations of words or phrases in high-dimensional space?": "Vevtors",
+  "What is finding documents with different wording but similar concepts?": "Similarity search",
+  "What is AI generating answers that are semantically accurate based on surrounding information?": "Context-Aware Responses",
+  "What is a A space where similar words/phrases are positioned closer together?": "Embedding Space (High-Dimensional Space)",
+  "What is the primary function of embeddings in AI legal assistants?": "To represent words and phrases as numerical vectors, allowing the AI to measure similarity and context.",
+  "How might embeddings be helpful in a Retrieval-Augmented Generation system?": "Embeddings convert queries and documents into vectors so you can perform fast semantic retrieval of relevant passages. Retrieved context grounds the generator, improving answer relevance, reducing hallucinations, enabling topical filtering, reranking, and scalable similarity search across large corpora.",
+  "What is the first step in the RAG system's response process?": "",
+  "What are some key components and best practices in the RAG system architecture and scaling of AI assistants?": "Key components include an embedding model for vectorization, a vector database for efficient retrieval, and a generative model for response generation. Best practices involve optimizing embedding quality, ensuring low-latency retrieval, and fine-tuning the generative model for domain-specific accuracy."
 }
