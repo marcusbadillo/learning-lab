@@ -4,13 +4,18 @@ This project sets up an AWS Bedrock Knowledge Base integrated with an Aurora Ser
 
 ## Table of Contents
 
-1. [Project Overview](#project-overview)
-2. [Prerequisites](#prerequisites)
-3. [Project Structure](#project-structure)
-4. [Deployment Steps](#deployment-steps)
-5. [Using the Scripts](#using-the-scripts)
-6. [Customization](#customization)
-7. [Troubleshooting](#troubleshooting)
+- [AWS Bedrock Knowledge Base with Aurora Serverless](#aws-bedrock-knowledge-base-with-aurora-serverless)
+    - [Table of Contents](#table-of-contents)
+    - [Project Overview](#project-overview)
+    - [Prerequisites](#prerequisites)
+    - [Project Structure](#project-structure)
+    - [Deployment Steps](#deployment-steps)
+    - [Using the Scripts](#using-the-scripts)
+        - [S3 Upload Script](#s3-upload-script)
+    - [Complete chat app](#complete-chat-app)
+        - [Complete invoke model and knoweldge base code](#complete-invoke-model-and-knoweldge-base-code)
+        - [Complete the prompt validation function](#complete-the-prompt-validation-function)
+    - [Troubleshooting](#troubleshooting)
 
 ## Project Overview
 
@@ -82,6 +87,7 @@ project-root/
 2. Navigate to the project Stack 1. This stack includes VPC, Aurora servlerless and S3
 
 3. Initialize Terraform:
+
    ```
    terraform init
    ```
@@ -93,9 +99,11 @@ project-root/
    - s3 bucket
 
 5. Deploy the infrastructure:
+
    ```
    terraform apply
    ```
+
    Review the planned changes and type "yes" to confirm.
 
 6. After the Terraform deployment is complete, note the outputs, particularly the Aurora cluster endpoint.
@@ -105,6 +113,7 @@ project-root/
 8. Navigate to the project Stack 2. This stack includes Bedrock Knowledgebase
 
 9. Initialize Terraform:
+
    ```
    terraform init
    ```
@@ -113,16 +122,19 @@ project-root/
      - Bedrock Knowledgebase configuration
 
 11. Deploy the infrastructure:
+
       ```
       terraform apply
       ```
+
       - Review the planned changes and type "yes" to confirm.
 
-
 12. Upload pdf files to S3, place your files in the `spec-sheets` folder and run:
+
       ```
       python scripts/upload_to_s3.py
       ```
+
       - Make sure to update the S3 bucket name in the script before running.
 
 13. Sync the data source in the knowledgebase to make it available to the LLM.
@@ -132,10 +144,12 @@ project-root/
 ### S3 Upload Script
 
 The `upload_to_s3.py` script does the following:
+
 - Uploads all files from the `spec-sheets` folder to a specified S3 bucket
 - Maintains the folder structure in S3
 
 To use it:
+
 1. Update the `bucket_name` variable in the script with your S3 bucket name.
 2. Optionally, update the `prefix` variable if you want to upload to a specific path in the bucket.
 3. Run `python scripts/upload_to_s3.py`.
@@ -143,13 +157,15 @@ To use it:
 ## Complete chat app
 
 ### Complete invoke model and knoweldge base code
+
 - Open the bedrock_utils.py file and the following functions:
-  - query_knowledge_base
-  - generate_response
+    - query_knowledge_base
+    - generate_response
 
 ### Complete the prompt validation function
+
 - Open the bedrock_utils.py file and the following function:
-  - valid_prompt
+    - valid_prompt
 
   Hint: categorize the user prompt
 
