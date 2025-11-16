@@ -154,3 +154,55 @@ aws bedrock vs. aws bedrock-runtime:
 aws bedrock # Modify service configurations and enable new models/features.
 aws bedrock-runtime # Invoke models directly and interact with them.
 ```
+
+## Terraform
+
+ is an open-source **infrastructure as code** (IaC) tool that allows you to define and provision infrastructure resources in a declarative manner. It helps automate the creation, modification, and destruction of infrastructure across various cloud providers (like AWS, Azure, GCP) and on-premises environments.
+
+**Define Infrastructure** write configs in HashiCorp Configuration Language (HCL) or JSON to describe the desired state of your infrastructure. This includes defining resources like virtual machines, databases, networks, and more.
+
+**Initialize Terraform** This command downloads the necessary provider plugins for the services you intend to use (e.g., AWS, Azure).
+
+```bash
+terraform init
+```
+
+**Plan Changes** This command analyzes your configuration files and compares them with the current state of your infrastructure (or an empty state if it's the first deployment). It then generates an execution plan, showing you exactly what changes Terraform will make to achieve the desired state, without actually applying them.
+
+```bash
+terraform plan
+```
+
+**Apply Changes** If you are satisfied with the plan use terraform apply. Terraform will then provision or modify the resources in your cloud or on-premises environment according to the execution plan. It interacts with the respective APIs of the providers to create, update, or delete resources.
+
+```bash
+terraform apply
+```
+
+**Destroy Infrastructure** When you no longer need the infrastructure use this to tear down all the resources defined in your configuration
+
+```bash
+terraform destroy
+```
+
+ . Terraform will prompt for confirmation before proceeding.
+In essence, you declare what you want, and Terraform figures out how to make it
+happen, providing a consistent and repeatable way to manage your infrastructure.
+
+### Terraform Files
+
+**terraform.tfstate** Terraform maintains a state file, typically named terraform.tfstate, which records the current state of your deployed infrastructure. This file is crucial for Terraform to understand what resources it manages and to perform future updates or deletions accurately.
+
+**main.tf** is a conventional filename used to store the primary configuration for a module, especially the root module of a Terraform project. Terraform does not strictly require this specific filename and will process all .tf files in a directory, "main.tf" is widely adopted as a best practice to organize and identify the core resource definitions and module calls within a configuration.
+
+## aws debugging
+
+show me avaiable PostgresSQL versions by region
+
+```bash
+aws rds describe-db-engine-versions \
+  --engine aurora-postgresql \
+  --query "DBEngineVersions[].EngineVersion" \
+  --output text \
+  --region us-west-1
+```
