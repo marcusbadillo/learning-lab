@@ -3,12 +3,12 @@
 Living archive of my ongoing learning and technical growth. Each directory represents a focused track, course, or tool I've explored with complete code samples, personal projects.
 
 - [Learning Lab](#learning-lab)
-  - [Introducing Generative AI with AWS](#introducing-generative-ai-with-aws)
-    - [Topics Covered](#topics-covered)
-    - [What I learned](#what-i-learned)
-    - [Python Environment Setup](#python-environment-setup)
-  - [Jupyter Notebooks](#jupyter-notebooks)
-  - [🧠 Terminal Quiz](#-terminal-quiz)
+    - [Introducing Generative AI with AWS](#introducing-generative-ai-with-aws)
+        - [Topics Covered](#topics-covered)
+        - [What I learned](#what-i-learned)
+        - [Python Environment Setup](#python-environment-setup)
+    - [Jupyter Notebooks](#jupyter-notebooks)
+    - [🧠 Terminal Quiz](#-terminal-quiz)
 
 ## Introducing Generative AI with AWS
 
