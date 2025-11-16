@@ -1,5 +1,6 @@
 provider "aws" {
   region = "us-west-2"  # Change this to your desired region
+  profile = "udacity-aws-lab-1" 
 }
 
 module "vpc" {

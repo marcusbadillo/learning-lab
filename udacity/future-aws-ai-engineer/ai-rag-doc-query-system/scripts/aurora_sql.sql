@@ -1,4 +1,4 @@
-"CREATE EXTENSION IF NOT EXISTS vector;",
+"CREATE EXTENSION IF NOT EXISTS vector;"
 "CREATE SCHEMA IF NOT EXISTS bedrock_integration;",
 "DO $$ BEGIN CREATE ROLE bedrock_user LOGIN; EXCEPTION WHEN duplicate_object THEN RAISE NOTICE 'Role already exists'; END $$;",
 "GRANT ALL ON SCHEMA bedrock_integration to bedrock_user;",

@@ -206,3 +206,12 @@ aws rds describe-db-engine-versions \
   --output text \
   --region us-west-1
 ```
+
+### query builder
+
+use this to connect to dbs real quick and run scripts
+use the output of stack 1 rds_secret_arn and database_name in database module
+
+## references
+
+[aws-get-started](https://developer.hashicorp.com/terraform/tutorials/aws-get-started)

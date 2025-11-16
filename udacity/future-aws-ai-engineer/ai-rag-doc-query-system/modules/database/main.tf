@@ -64,7 +64,13 @@ resource "aws_security_group" "aurora_sg" {
 # New resources for secret management
 resource "random_password" "master_password" {
   length  = 16
+  lower   = true
+  upper   = true
   special = true
+
+  # Only allow specials that RDS accepts: us-west-2 = 15.6 postgresql
+  # EXCLUDING: / @ " (space)
+  override_special = "!#$%^&*()-_=+[]{}:;,.?"
 }
 
 resource "aws_secretsmanager_secret" "aurora_secret" {

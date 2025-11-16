@@ -1,10 +1,16 @@
 import os
-import boto3
+
+from boto3.session import Session
 from botocore.exceptions import ClientError
+
+session = Session(profile_name="udacity-aws-lab-1")
+
+
+
 
 def upload_files_to_s3(folder_path, bucket_name, prefix=""):
     # Initialize S3 client
-    s3_client = boto3.client('s3')
+    s3_client = session.client('s3')
 
     # Check if the folder exists
     if not os.path.exists(folder_path):
@@ -32,7 +38,8 @@ if __name__ == "__main__":
     folder_path = "spec-sheets"
     
     # S3 bucket name
-    bucket_name = "bedrock-kb-975050171524"  # Replace with your actual bucket name
+    # Replace with your actual bucket name
+    bucket_name = "bedrock-kb-702043267423" 
     
     # S3 prefix (optional)
     prefix = "spec-sheets" 
