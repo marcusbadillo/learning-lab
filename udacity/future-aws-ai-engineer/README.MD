@@ -195,6 +195,12 @@ happen, providing a consistent and repeatable way to manage your infrastructure.
 
 **main.tf** is a conventional filename used to store the primary configuration for a module, especially the root module of a Terraform project. Terraform does not strictly require this specific filename and will process all .tf files in a directory, "main.tf" is widely adopted as a best practice to organize and identify the core resource definitions and module calls within a configuration.
 
+show everything terraform believes exists in the current stack
+
+```bash
+terraform state list
+```
+
 ## aws debugging
 
 show me avaiable PostgresSQL versions by region
@@ -206,6 +212,64 @@ aws rds describe-db-engine-versions \
   --output text \
   --region us-west-1
 ```
+
+official way to confirm AWS credentials work.
+
+```bash
+aws sts get-caller-identity --profile udacity-aws-lab-1
+```
+
+Since IAM read-only is safe in Udacity labs:
+
+```bash
+aws iam list-users --profile udacity-aws-lab-1
+```
+
+show default profile aws clie uses
+
+```bash
+aws configure list
+```
+
+show region profile is associated with
+
+```bash
+aws configure get region --profile udacity-aws-lab-1
+```
+
+find collecting subnets
+
+```bash
+aws ec2 describe-subnets \
+  --filters Name=cidr-block,Values=10.0.1.0/24,10.0.2.0/24,10.0.3.0/24 \
+  --query "Subnets[].{SubnetId:SubnetId,VpcId:VpcId,CIDR:CidrBlock,Name:Tags[?Key=='Name']|[0].Value}" \
+  --region us-west-2 \
+  --profile udacity-aws-lab-1
+```
+
+find whats using subnet
+
+```bash
+aws ec2 describe-network-interfaces \
+  --filters Name=subnet-id,Values=subnet-073e53d1044218871 \
+  --query "NetworkInterfaces[].{Id:NetworkInterfaceId,Type:InterfaceType,Desc:Description,Attachment:Attachment.InstanceId}" \
+  --region us-west-2 \
+  --profile udacity-aws-lab-1
+```
+
+## subnets refresher
+
+A Virtual Private Cloud (VPC) is your isolated private network inside AWS. You subdivide its IP range (e.g., 10.0.0.0/16) into smaller, non-overlapping ranges called subnets. Each subnet must have a unique CIDR block—AWS will not allow overlaps.
+
+Public subnets attach to an Internet Gateway (IGW) and can assign public IPs.
+
+Private subnets do not expose public IPs and access the internet only via a NAT Gateway.
+
+Aurora, RDS, Lambda, ECS tasks, private workloads → must run inside private subnets.
+
+NAT Gateways, Load Balancers, Bastion Hosts → usually live in public subnets.
+
+Think of subnets as individual “rooms” inside your network: each must have a unique floor space (CIDR), and the type of “door” (public or private) determines if the room can reach the outside world.
 
 ### query builder
 
