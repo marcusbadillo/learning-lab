@@ -279,3 +279,12 @@ use the output of stack 1 rds_secret_arn and database_name in database module
 ## references
 
 [aws-get-started](https://developer.hashicorp.com/terraform/tutorials/aws-get-started)
+
+## streamlit debugging
+
+needed to use for the vm to work, steamlit was pointing to global non vm python
+
+```bash
+  which streamlit
+  python -m streamlit run app.py
+ ```
