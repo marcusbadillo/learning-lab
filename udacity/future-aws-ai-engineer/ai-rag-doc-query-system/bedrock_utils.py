@@ -1,16 +1,16 @@
 """
-Terminal-based RAG chat app using AWS Bedrock + Knowledge Base.
+Utility helpers for RAG chat app using AWS Bedrock + Knowledge Base.
 
-This script:
+This module:
+- Creates AWS Bedrock runtime clients.
 - Validates user prompts (only heavy machinery questions allowed).
 - Retrieves relevant context from a Bedrock Knowledge Base.
 - Generates an answer with a Bedrock LLM (Claude-style).
-- Runs in a simple while-loop in the terminal.
+- Builds RAG prompts that ground answers in retrieved context.
 
-Security / practical notes:
+Note:
 - Uses an AWS profile for the Udacity lab; in real deployments prefer IAM roles.
 - Model ID, KB ID, and region should come from configuration (constants/env).
-- This is a *front-end shell* around the core AI helpers.
 """
 
 import json
@@ -38,7 +38,7 @@ bedrock_kb = session.client(
     region_name=const.region_name,
 )
 
-# Model and KB configuration
+# Optional defaults (used by CLI or other callers if needed)
 MODEL_ID = getattr(const, "model_id", None)
 KB_ID = getattr(const, "kb_id", None)
 DEFAULT_TEMPERATURE = getattr(const, "default_temperature", 0.1)
@@ -48,6 +48,7 @@ DEFAULT_TOP_P = getattr(const, "default_top_p", 0.9)
 # ---------------------------------------------------------------------------
 # Core AI helpers
 # ---------------------------------------------------------------------------
+
 
 def valid_prompt(prompt: str, model_id: str) -> bool:
     """
@@ -82,7 +83,7 @@ def valid_prompt(prompt: str, model_id: str) -> bool:
                                 
                                 Category B
                                 
-                                Assistant:"""
+                                Assistant:""",
                     }
                 ],
             }
@@ -140,7 +141,9 @@ def query_knowledge_base(query: str, kb_id: str) -> List[Dict[str, Any]]:
         return []
 
 
-def generate_response(prompt: str, model_id: str, temperature: float, top_p: float) -> str:
+def generate_response(
+    prompt: str, model_id: str, temperature: float, top_p: float
+) -> str:
     """
     Invoke the LLM to generate the final answer.
 
@@ -186,10 +189,6 @@ def generate_response(prompt: str, model_id: str, temperature: float, top_p: flo
         return ""
 
 
-# ---------------------------------------------------------------------------
-# RAG prompt builder & terminal UI
-# ---------------------------------------------------------------------------
-
 def build_rag_prompt(question: str, retrieval_results: List[Dict[str, Any]]) -> str:
     """
     Build a single prompt string that:
@@ -209,7 +208,9 @@ def build_rag_prompt(question: str, retrieval_results: List[Dict[str, Any]]) -> 
             text = (
                 content.get("text")
                 if isinstance(content, dict)
-                else content[0].get("text", "") if content else ""
+                else content[0].get("text", "")
+                if content
+                else ""
             )
             source = item.get("metadata", {}).get(
                 "x-amz-bedrock-kb-source-uri", "unknown source"
@@ -230,64 +231,3 @@ Question:
 
 Answer:"""
     return prompt
-
-
-def main() -> None:
-    """Simple terminal-based chat loop."""
-    if not MODEL_ID or not KB_ID:
-        print("ERROR: MODEL_ID or KB_ID is not configured in constants.py.")
-        print("       Please set const.model_id and const.kb_id, then rerun.")
-        return
-
-    print("===============================================")
-    print("  Heavy Machinery Knowledge Base Chat (CLI)")
-    print("===============================================")
-    print("Type 'exit' or 'quit' to leave.\n")
-
-    while True:
-        try:
-            user_input = input("You: ").strip()
-        except (EOFError, KeyboardInterrupt):
-            print("\nExiting.")
-            break
-
-        if not user_input:
-            continue
-
-        if user_input.lower() in {"exit", "quit"}:
-            print("Goodbye!")
-            break
-
-        # 1) Guardrail: only answer heavy machinery questions
-        if not valid_prompt(user_input, MODEL_ID):
-            print(
-                "Assistant: I can only answer questions related to heavy machinery. "
-                "Please ask a domain-specific question.\n"
-            )
-            continue
-
-        # 2) Retrieve context from KB
-        retrieval_results = query_knowledge_base(user_input, KB_ID)
-
-        # 3) Build a grounded RAG prompt
-        rag_prompt = build_rag_prompt(user_input, retrieval_results)
-
-        # 4) Generate the final answer
-        answer = generate_response(
-            prompt=rag_prompt,
-            model_id=MODEL_ID,
-            temperature=DEFAULT_TEMPERATURE,
-            top_p=DEFAULT_TOP_P,
-        )
-
-        if not answer:
-            print("Assistant: I couldn't generate a response right now.\n")
-        else:
-            print(f"Assistant: {answer}\n")
-
-
-if __name__ == "__main__":
-    main()
-
-
-
