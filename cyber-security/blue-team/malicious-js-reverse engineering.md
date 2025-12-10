@@ -1,10 +1,12 @@
 # Deconstruction of a Web Security Software Botnet Detection via Malicious JavaScript
 
+> In order to prevent effective reverse engineering, you must use an obfuscation tool.
+
 ## Executive Summary
 
 During routine browsing activity, the user was redirected from a sign-up form to a secondary webpage that attempted to load a known malicious JavaScript resource:
 
-Due to business details exposure this is referenced as xxxxxx.com
+Due to business details exposure this is re and toolsferenced as xxxxxx.com
 
 Web Security application (name withheld for privacy and abstraction) intercepted the request and classified it as malicious, consistent with botnet distribution, malvertising infrastructure, or injection-based compromise.
 
@@ -136,3 +138,23 @@ parse for obfuscation patterns and Extracting IOCs (Remote domains, Payload URLs
 grep -E "eval|atob|unescape|Function|while\(true\)|document\.write|innerHTML" clean.js
 
 ```
+
+## References
+
+[JS Obfuscation](https://www.infosecinstitute.com/resources/reverse-engineering/reverse-engineering-javascript-obfuscated-dropper)
+
+## Other tooling
+
+| **Category**                               | **Tool**                                                                             | **Description**                                                                                                                   |
+| ------------------------------------------ | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
+| **Script Obfuscators (Bash / PowerShell)** | **[Bashfuscator](https://github.com/Bashfuscator/Bashfuscator)**                     | Framework for generating highly obfuscated Bash scripts; available in Parrot’s package manager.                                   |
+|                                            | **[Invoke-Obfuscation](https://github.com/danielbohannon/Invoke-Obfuscation)**       | PowerShell obfuscation module used extensively in red-team operations; can be run on Linux to generate Windows-targeted payloads. |
+| **Binary / Executable Protectors**         | **[Hyperion](https://github.com/nullsecuritynet/tools/tree/master/binary/hyperion)** | Runtime encryptor for 32-bit Windows PE executables.                                                                              |
+|                                            | **[Shellter](https://www.shellterproject.com/)**                                     | Dynamic shellcode injection and PE file modification tool designed to evade antivirus detection.                                  |
+|                                            | **[ProGuard](https://www.guardsquare.com/opensource/proguard)**                      | Open-source optimizer and obfuscator for Java and Android applications.                                                           |
+| **Generic Encoding / Obfuscation Methods** | **Base64**                                                                           | Widely used encoding method to conceal strings in scripts. (No repo—standard encoding scheme.)                                    |
+|                                            | **[CyberChef](https://gchq.github.io/CyberChef/)**                                   | Web-based “cyber Swiss Army knife” for encoding, decoding, compression, and light obfuscation workflows.                          |
+| **Deobfuscation / Analysis Tools**         | **[Ghidra](https://ghidra-sre.org/)**                                                | Full-featured reverse engineering suite with disassembly and decompilation.                                                       |
+|                                            | **[radare2](https://github.com/radareorg/radare2)**                                  | Command-line binary analysis and reverse engineering framework.                                                                   |
+|                                            | **[olevba](https://github.com/decalage2/oletools/wiki/olevba)**                      | Tool for extracting and detecting obfuscation inside VBA macros in Microsoft Office documents.                                    |
+| **Discovery / Package Lookup Methods** | **`apt search obfuscation`** | Or Fuzzy-search for obfuscation-related packages across Debian-based Linux distributions using system repositories. |
