@@ -64,10 +64,15 @@ https://www.xxxxxx.com/xxxxxx?submissionGuid=XXXX
 ## Artifacts Included
 
 1. Initial botnet detection alert (3 screenshots)
+![Avast Web Shield – Initial botnet detection alert](screenshots/alert-1.png)
 
-2. JavaScript payload blocked before execution
+![Avast Web Shield – Blocked JavaScript payload](screenshots/alert-2.png)
 
-3. Secondary blocked resource (favicon request)
+![Avast Web Shield – Secondary blocked request](screenshots/alert-3.png)
+
+1. JavaScript payload blocked before execution
+
+2. Secondary blocked resource (favicon request)
 
 These screenshots are treated as primary DFIR evidence artifacts and preserved without modification
 
