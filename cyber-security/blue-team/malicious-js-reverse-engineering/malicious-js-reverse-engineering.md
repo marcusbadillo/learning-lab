@@ -64,11 +64,11 @@ https://www.xxxxxx.com/xxxxxx?submissionGuid=XXXX
 ## Artifacts Included
 
 1. Initial botnet detection alert (3 screenshots)
-![Avast Web Shield – Initial botnet detection alert](screenshots/alert-1.png)
+![Avast Web Shield – Initial botnet detection alert](screenshots/advast-1.png)
 
-![Avast Web Shield – Blocked JavaScript payload](screenshots/alert-2.png)
+![Avast Web Shield – Blocked JavaScript payload](screenshots/advast-2.png)
 
-![Avast Web Shield – Secondary blocked request](screenshots/alert-3.png)
+![Avast Web Shield – Secondary blocked request](screenshots/advast-3.png)
 
 1. JavaScript payload blocked before execution
 
