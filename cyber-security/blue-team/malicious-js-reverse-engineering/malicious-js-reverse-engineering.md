@@ -1,16 +1,26 @@
-# Deconstruction of a Web Security Software Botnet Detection via Malicious JavaScript
+# Deconstruction of a Web Security Botnet Detection
 
-> In order to prevent effective reverse engineering, you must use an obfuscation tool.
+## Malicious JavaScript Payload Analysis (Client-Side)
+
+**Author:** Marcus Badillo
+**Discipline:** Web Security / Blue Team / DFIR
+**Primary Background:** Frontend Engineering (JavaScript, Browser Runtime)
+**Analysis Focus:** Client-side malware delivery & JavaScript reverse engineering
+**Status:** Active Investigation
 
 ## Executive Summary
 
-During routine browsing activity, the user was redirected from a sign-up form to a secondary webpage that attempted to load a known malicious JavaScript resource:
+During routine user interaction with a public-facing sign-up workflow, a **client-side redirection event** triggered an attempted download of a **malicious JavaScript asset**. Endpoint web security software intercepted the request and classified it as **URL:Botnet**, preventing execution.
 
-Due to business details exposure this is re and toolsferenced as xxxxxx.com
+The blocked artifact exhibited characteristics consistent with:
 
-Web Security application (name withheld for privacy and abstraction) intercepted the request and classified it as malicious, consistent with botnet distribution, malvertising infrastructure, or injection-based compromise.
+- Botnet staging infrastructure
+- Malvertising-based JavaScript delivery
+- Injection or supply-chain compromise
 
-This document outlines the professional Blue-Team workflow used to safely acquire, deobfuscate, analyze, and document malicious JavaScript artifacts.
+This repository documents a **Blue Team–aligned investigative workflow** for safely acquiring, deobfuscating, analyzing, and documenting malicious JavaScript delivered through a browser execution context.
+
+All domains, identifiers, and business details have been anonymized.
 
 ---
 
@@ -48,6 +58,18 @@ https://www.xxxxxx.com/xxxxxx?submissionGuid=XXXX
 2. **Suspicious path (“/clipper”)** commonly appearing in malware ecosystems (clipper malware, botnet droppers, malvertising payloads).
 3. **Redirect chains** were present and appeared influenced by user-agent and session context.
 4. **Possible script injection** on the referring site, suggesting server compromise or malvertising delivery.
+
+---
+
+## Artifacts Included
+
+1. Initial botnet detection alert (3 screenshots)
+
+2. JavaScript payload blocked before execution
+
+3. Secondary blocked resource (favicon request)
+
+These screenshots are treated as primary DFIR evidence artifacts and preserved without modification
 
 ---
 
