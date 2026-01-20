@@ -64,7 +64,7 @@ https://www.xxxxxx.com/xxxxxx?submissionGuid=XXXX
 ## Artifacts Included
 
 1. Initial botnet detection alert (3 screenshots)
-![Avast Web Shield – Initial botnet detection alert](screenshots/advast-1.png)
+   ![Avast Web Shield – Initial botnet detection alert](screenshots/advast-1.png)
 
 ![Avast Web Shield – Blocked JavaScript payload](screenshots/advast-2.png)
 
@@ -137,7 +137,7 @@ curl -A "Mozilla/*** (Windows NT 10.0; Win64; x64) AppleWebKit/*** (KHTML, like 
 
 And compare these samples to detect:
 
-***Indicators of Conditional Delivery***
+**_Indicators of Conditional Delivery_**
 
 1. Payload switching
 
@@ -184,4 +184,31 @@ grep -E "eval|atob|unescape|Function|while\(true\)|document\.write|innerHTML" cl
 | **Deobfuscation / Analysis Tools**         | **[Ghidra](https://ghidra-sre.org/)**                                                | Full-featured reverse engineering suite with disassembly and decompilation.                                                       |
 |                                            | **[radare2](https://github.com/radareorg/radare2)**                                  | Command-line binary analysis and reverse engineering framework.                                                                   |
 |                                            | **[olevba](https://github.com/decalage2/oletools/wiki/olevba)**                      | Tool for extracting and detecting obfuscation inside VBA macros in Microsoft Office documents.                                    |
-| **Discovery / Package Lookup Methods** | **`apt search obfuscation`** | Or Fuzzy-search for obfuscation-related packages across Debian-based Linux distributions using system repositories. |
+| **Discovery / Package Lookup Methods**     | **`apt search obfuscation`**                                                         | Or Fuzzy-search for obfuscation-related packages across Debian-based Linux distributions using system repositories.               |
+
+## Contributing / Feedback
+
+This repository is part of my Learning Lab and represents an ongoing effort to better understand client-side security threats from a frontend engineering perspective.
+
+While I am not a career cybersecurity professional, I aim to approach this work with the same care, discipline, and documentation standards used in Blue Team and DFIR environments. This analysis reflects a learning-in-public mindset rather than formal security research.
+
+### Feedback and Discussion
+
+If you notice:
+
+- inaccuracies or incorrect assumptions
+- gaps in the deobfuscation or analysis process
+- alternative interpretations of the script’s behavior
+- opportunities to improve methodology or tooling
+
+I welcome thoughtful feedback and discussion.
+
+Please use **GitHub Issues** for:
+
+- corrections or clarifications
+- suggested improvements
+- technical discussion related to this investigation
+
+This keeps conversation centralized, transparent, and useful for others who may be learning from the same material.
+
+Thank you to anyone who takes the time to review or contribute insights.
